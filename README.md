@@ -157,6 +157,7 @@ You may find the RAMPhaGE Oligo Tool used for generating oligo libraries in the 
 
 Positional enrichment data — derived from Nanopore-based variant frequency analysis — were mapped onto residue positions using a custom PyMOL coloring script.
 
-The relevant scripts can be found in:
-- `scripts/impose_enrichment_on_pymol.py` – for enrichment mapping
-- `scripts/pymol/` – for individual `.pml` visualization files
+The relevant files can be found in:
+- `scripts/impose_enrichment_on_pymol.py` – script for enrichment mapping
+- `scripts/pymol/` – individual `.pml` visualization scripts
+- `final_output/alphafold_structures` - structures used for coloring
