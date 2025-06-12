@@ -24,7 +24,7 @@ conda env create -n pogo_pance --file environment.yml
 
 ## Data
 
-The notebooks in `figure_notebooks` can be executed without the full raw dataset **unless explicitly stated otherwise** in the notebook header. For notebooks requiring original data, please download the corresponding datasets from Zenodo ([link]) and placer the extracted contents into a folder named `data` at the root level of the repository.
+The notebooks in `figure_notebooks` can be executed without the full raw dataset **unless explicitly stated otherwise** in the notebook header. For notebooks requiring original data, please download the corresponding datasets from Zenodo ([link]) and place the extracted contents into a folder named `data` at the root level of the repository.
 
 ⚠️ **Important:** Maintain the original Zenodo folder structure exactly. The expected directory tree should look like this:
 
@@ -120,7 +120,7 @@ Flow cytometry data from FACS experiments were analyzed using the `cytoflow` pac
 
 #### Automated Analysis Workflow
 
-Run the following scripts sequentially to perform the analysis. Make sure to set the correct parameters for your analysis first (at the beginning of the respective scripts and/or your `config.json` file). All scripts located at `analysis_pipeline/Illumina`
+Run the following scripts sequentially to perform the analysis. Make sure to set the correct parameters for your analysis first (at the beginning of the respective scripts and/or your `config.json` file). All scripts are located at `analysis_pipeline/Illumina`
 
 ```bash
 python 0_Illumina_preprocess_and_align_illumina_reads.py input_folder --save_ref
@@ -129,7 +129,7 @@ python 1_Illumina_analyze_mutation_enrichment.py
 python 2_Illumina_analyze_linkers.py
 ```
 
-For further analysis and visualisation, refer to the notebooks `3_Illumina_DMS_analysis.ipynb` and `4_Illumina_linker_analysis.ipynb` at `analysis_pipeline/Illumina`.
+For further analysis and visualization, refer to the notebooks `3_Illumina_DMS_analysis.ipynb` and `4_Illumina_linker_analysis.ipynb` at `analysis_pipeline/Illumina`.
 
 ### Nanopore Data Analysis
 
@@ -142,7 +142,7 @@ Raw sequencing input data can be found in the Zenodo repository at [insert link 
 - Only keep reads where both ends have matching barcodes.
 
 #### Read processing
-Use the script below to perform all required preprocessing steps, including quality filtering, alignment, and quality control. Scripts located at `analysis_pipeline/Nanopore`.
+Use the script below to perform all required preprocessing steps, including quality filtering, alignment, and quality control. Scripts are located at `analysis_pipeline/Nanopore`.
 
 ```bash
 bash 00_Nanopore_filtering_alignment_processing.sh
