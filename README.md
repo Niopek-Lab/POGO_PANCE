@@ -151,7 +151,7 @@ bash 00_Nanopore_filtering_alignment_processing.sh
 Instead, skip this step and start from .bam files using: `2_Nanopore_linker_analysis.ipynb`
 
 ### Scripts
-You may find the RAMPhaGE Oligo Tool used for generating oligo libraries in the `scripts/` directory. Additionally, you may directly start it in Google Collab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Niopek-Lab/POGO_PANCE/blob/main/scripts/RAMPhaGE_Oligo_Tool.ipynb). In the same directory, you may also find other scripts essential for the analysis.
+You may find the RAMPhaGE Oligo Tool used for generating oligo libraries in the `scripts/` directory. Additionally, you may directly [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Niopek-Lab/POGO_PANCE/blob/main/scripts/RAMPhaGE_Oligo_Tool.ipynb). In the same directory, you may also find other scripts essential for the analysis.
 
 ## PyMOL
 
