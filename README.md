@@ -24,7 +24,7 @@ conda env create -n pogo_pance --file environment.yml
 
 ## Data
 
-The notebooks in `figure_notebooks` can be executed without the full raw dataset **unless explicitly stated otherwise** in the notebook header. For notebooks requiring original data, please download the corresponding datasets from Zenodo ([link]) and place the extracted contents into a folder named `data` at the root level of the repository.
+The notebooks in `figure_notebooks` can be executed without the full raw dataset **unless explicitly stated otherwise** in the notebook header. For notebooks requiring original data, please download the corresponding datasets from [Zenodo](https://doi.org/10.5281/zenodo.15650047) and place the extracted contents into a folder named `data` at the root level of the repository.
 
 ⚠️ **Important:** Maintain the original Zenodo folder structure exactly. The expected directory tree should look like this:
 
@@ -42,7 +42,7 @@ repo-root/
 
 Each dataset includes a `config.json` file specifying parameters such as reference sequences, barcodes, and primer sequences. An example is included at `analysis_pipeline/Illumina/example_config.json`. 
 
-- Raw and processed data (including alignments) are located in the Zenodo repository at [insert link here]
+- Raw and processed data (including alignments) are located in the [Zenodo repository](https://doi.org/10.5281/zenodo.15650047)
 - Analysis results (e.g. mutation enrichment, spectra, plots) are saved in `/final_output/Illumina/{experiment}`
 
 **Naming conventions:**
@@ -78,9 +78,9 @@ Each dataset includes a `config.json` file specifying parameters such as referen
 
 All Nanopore datasets were processed using the same preprocessing pipeline. Basecalling was done with super high-accuracy settings; only reads with matching barcodes were used.
 
-- Preprocessed reads are stored in the Zenodo repository at [insert link here]
+- Preprocessed reads are stored in the [Zenodo repository](https://doi.org/10.5281/zenodo.15650047)
 - Results of the analysis are saved in `/final_output/Nanopore/Nanopore_{ID}/{barcode_name}`
-- Raw data (super high-accuracy basecalling): in Zenodo repository at [insert link here]
+- Raw data (super high-accuracy basecalling): in [Zenodo repository](https://doi.org/10.5281/zenodo.15650047)
 
 #### Included Datasets
 
@@ -105,7 +105,7 @@ All Nanopore datasets were processed using the same preprocessing pipeline. Base
 
 ### Flow Cytometry Data
 
-Flow cytometry data from FACS experiments were analyzed using the `cytoflow` package. Data can be found in the Zenodo repository at [insert link here]. The corresponding analysis and visualizations are documented in the notebooks `figure_notebooks/Figure_2.ipynb` and `figure_notebooks/Figure_S2.ipynb`.
+Flow cytometry data from FACS experiments were analyzed using the `cytoflow` package. Data can be found in the [Zenodo repository](https://doi.org/10.5281/zenodo.15650047). The corresponding analysis and visualizations are documented in the notebooks `figure_notebooks/Figure_2.ipynb` and `figure_notebooks/Figure_S2.ipynb`.
 
 
 ## Usage
@@ -133,7 +133,7 @@ For further analysis and visualization, refer to the notebooks `3_Illumina_DMS_a
 
 ### Nanopore Data Analysis
 
-Raw sequencing input data can be found in the Zenodo repository at [insert link here].
+Raw sequencing input data can be found in the [Zenodo repository](https://doi.org/10.5281/zenodo.15650047).
 
 #### Sequencing & Basecalling
 
