@@ -1,28 +1,36 @@
-![header image](img/README_header.png)
 # Phage-assisted evolution of allosteric protein switches
-
+![header image](img/title.png)
 ## Table of Contents
 
 - [Abstract](#abstract)
 - [Requirements](#requirements)
-- [Data](#data)
+- [Software - RAMPhaGE Oligo Tool](#software---ramphage-oligo-tool)
+- [Data analysis](#data-analysis)
 - [Usage](#usage)
 - [PyMOL Structural Visualization](#pymol)
 
 ## Abstract
 Allostery, the transmission of locally induced conformational changes to distant functional sites, is a key mechanism for protein regulation. Artificial allosteric effectors enable remote manipulation of cell function; their engineering, however, is hampered by our limited understanding of allosteric residue networks. Here, we introduce a phage-assisted evolution platform for in vivo optimization of allosteric proteins. It applies opposing selection pressures to enhance activity and switchability of phage-encoded effectors and leverages retron-based recombineering to broadly explore fitness landscapes, covering point mutations, insertions and deletions. Applying our pipeline to the transcription factor AraC yielded optogenetic variants with light-controlled activity spanning ~1000-fold dynamic range. Long-read sequencing across selection cycles revealed adaptive trajectories and corresponding allosteric interactions. Our work facilitates phage-assisted evolution of allosteric proteins for programmable cellular control.
 
-For more details, please refer to our [manuscript](https://www.biorxiv.org/content/10.1101/2025.06.12.659331v1). 
+For more details, please refer to our [manuscript](https://www.biorxiv.org/content/10.1101/2025.06.12.659331v1).
 
 ## Requirements
-All analysis was conducted using Python version 3.9.1.
+All analysis was conducted using Python version 3.9.1 using Ubuntu 24.04.1 LTS on a machine with a AMD Ryzen Threadripper PRO 5965WX 24-Cores CPU and 128 GB RAM.
 
-To use this repository, make sure you have conda or mamba installed on your device. Then run:
+To use this repository, make sure you have the conda package manager installed on your device. Then run:
 ``` bash
 conda env create -n pogo_pance --file environment.yml
 ```
+This will create a new environment containing all required packages.
 
-## Data
+## Software - RAMPhaGE Oligo Tool
+You may find the RAMPhaGE Oligo Tool used for generating oligo libraries in the `scripts/` directory. Additionally, we provide a Google Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Niopek-Lab/POGO_PANCE/blob/main/scripts/RAMPhaGE_Oligo_Tool.ipynb)
+
+Detailed instructions with examples are directly provided inside the notebook. The time needed to generate oligos should be in a few minutes depending on the complexity of the pool.
+
+## Data analysis
 
 The notebooks in `figure_notebooks` can be executed without the full raw dataset **unless explicitly stated otherwise** in the notebook header. For notebooks requiring original data, please download the corresponding datasets from [Zenodo](https://doi.org/10.5281/zenodo.15650047) and place the extracted contents into a folder named `data` at the root level of the repository.
 
@@ -40,7 +48,7 @@ repo-root/
 
 ### Illumina Data Overview
 
-Each dataset includes a `config.json` file specifying parameters such as reference sequences, barcodes, and primer sequences. An example is included at `analysis_pipeline/Illumina/example_config.json`. 
+Each dataset includes a `config.json` file specifying parameters such as reference sequences, barcodes, and primer sequences. An example is included at `analysis_pipeline/Illumina/example_config.json`.
 
 - Raw and processed data (including alignments) are located in the [Zenodo repository](https://doi.org/10.5281/zenodo.15650047)
 - Analysis results (e.g. mutation enrichment, spectra, plots) are saved in `/final_output/Illumina/{experiment}`
@@ -48,30 +56,30 @@ Each dataset includes a `config.json` file specifying parameters such as referen
 **Naming conventions:**
 - Each file includes its Barcode (BC) and Section (S) identifiers, e.g. `BC1_S1`
 - Even single-barcode/section datasets use the labels `BC1` and `S1`
-- `R1` = forward read, `R2` = reverse read  
-  - In linker analysis: `R1` = left linker, `R2` = right linker  
+- `R1` = forward read, `R2` = reverse read
+  - In linker analysis: `R1` = left linker, `R2` = right linker
 
 #### Included Datasets
 
-- **LOV_DP6_Library_Mutagenesis_10-8**  
+- **LOV_DP6_Library_Mutagenesis_10-8**
   DP6 mutagenesis screen of AraC-LOV; analyzed for mutation enrichment and spectrum.
 
-- **LOV_Linker_Library_Mutagenesis_10-8**  
+- **LOV_Linker_Library_Mutagenesis_10-8**
   DMS library (RL8) screen of AraC-LOV (targeting the LOV region); targeted mutation rates and spectrum.
 
-- **Linker_Library_Mutagenesis_10-8**  
+- **Linker_Library_Mutagenesis_10-8**
   Linker library (RL1) analysis of AraC-LOV with indels and substitutions at linker sites.
 
-- **RAMPhaGE_Plasmid_Library_NGS**  
-  Sequencing of the input retron libraries:  
-  - `BC1`: linker library  
-  - `BC3`: DMS (targeting LOV2 in AraC-LOV)  
+- **RAMPhaGE_Plasmid_Library_NGS**
+  Sequencing of the input retron libraries:
+  - `BC1`: linker library
+  - `BC3`: DMS (targeting LOV2 in AraC-LOV)
   - Only forward reads used to avoid reverse read quality artifacts.
 
-- **AraC-LOV_RAMPhaGE_Multi-library_NGS**  
+- **AraC-LOV_RAMPhaGE_Multi-library_NGS**
   Combined DMS (BC1) and linker (BC2) analysis.
 
-- **AraC-R2-LOV_POGO_RAMPhaGE_NGS**  
+- **AraC-R2-LOV_POGO_RAMPhaGE_NGS**
   Linker evolution experiment; one pool sequenced after mutagenesis (BC1) and two pools sequenced at the final day (BC2 and BC3).
 
 ### Nanopore Data Overview
@@ -84,13 +92,13 @@ All Nanopore datasets were processed using the same preprocessing pipeline. Base
 
 #### Included Datasets
 
-- **Nanopore_P0109**  
+- **Nanopore_P0109**
   Final-day sequencing of pools from different POGO setups:
   - **R2_P1-1_End - R2_P3-1_End**: aligned to **AraC-LOV2-R2**
   - **R5_P1-1_End - R5_P3-2_End**: aligned to **AraC-LOV2-R5**
 
 
-- **Nanopore_P0115**  
+- **Nanopore_P0115**
 
   - **R2_P1-2_Cycle-1_P-1 - R2_P1-2_Cycle-3_P-3** correspond to different steps in the POGO selection experiment:
     - Each group includes mutation → negative selection → positive selection (3 steps total).
@@ -114,8 +122,8 @@ Flow cytometry data from FACS experiments were analyzed using the `cytoflow` pac
 #### Required Input
 
 1. A `config.json` file containing filtering and demultiplexing parameters located within each experiment folder.
-2. `.fastq` files for forward (`R1`) and reverse (`R2`) reads.  
-   **Filename format:**   `{variant}_{read direction}_001.fastq`  
+2. `.fastq` files for forward (`R1`) and reverse (`R2`) reads.
+   **Filename format:**   `{variant}_{read direction}_001.fastq`
    *Example:* `DP6_R1_001.fastq`
 
 #### Automated Analysis Workflow
@@ -151,7 +159,7 @@ bash 00_Nanopore_filtering_alignment_processing.sh
 Instead, skip this step and start from .bam files using: `2_Nanopore_linker_analysis.ipynb`
 
 ### Scripts
-You may find the RAMPhaGE Oligo Tool used for generating oligo libraries in the `scripts/` directory. Additionally, you may directly [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Niopek-Lab/POGO_PANCE/blob/main/scripts/RAMPhaGE_Oligo_Tool.ipynb). In the same directory, you may also find other scripts essential for the analysis.
+The `scripts` directory contains some extra scripts essential for the analysis.
 
 ## PyMOL
 
